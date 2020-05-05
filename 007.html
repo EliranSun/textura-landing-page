@@ -401,17 +401,18 @@
         #thank-you-page #links {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         .link {
-            /* flex: 1 1 33%; */
+            flex: 1 1 33%;
             cursor: pointer;
             width: 27%;
             background-color: white;
             border: 3px solid white;
             padding: 10px;
             text-align: center;
-            margin: 10px auto;
+            margin: 10px;
         }
 
         .link:hover {
@@ -423,9 +424,18 @@
             bottom: 0;
         }
 
+        #calendar-links {
+            text-align: right;
+        }
+
+        #calendar-links li {
+            padding: 0 5px;
+            margin: 0;
+        }
+
         #thank-you-page #artificial-gap-hack {
             width: 100%;
-            height: 44px;
+            height: 22px;
         }
 
         #register #go-to-links-page {
@@ -592,6 +602,7 @@
                             <a target="_blank" href="https://chat.whatsapp.com/JxDIcIn4E6M6Ruck1YLYKB">
                                 <h3>קהילה</h3>
                                 <p>הצטרפות לקבוצת וואטס-אפ קטנה, לעדכונים ושיח עם הכותבים בטקסטורה שלך</p>
+                                <div id="artificial-gap-hack"></div>
                                 <img src="./assets/whatsapp.png" alt="whatsapp" />
                             </a>
                         </div>
@@ -604,14 +615,36 @@
                             </a>
                         </div>
                         <div class="link">
-                            <a target="_blank"
-                                href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=M2dsZGdpa3FiNGhpdmUwNzYzZGQ1cWxlM2sgbWlrYWNvaGVuNzQ4QG0&amp;tmsrc=mikacohen748%40gmail.com">
-                                <h3>הצטרפות ליומן</h3>
-                                <p>לשם קבלת תזכורות לדד ליין ומפגשי זום</p>
-                                <div id="artificial-gap-hack"></div>
-                                <img id="google-calendar" alt="calendar"
-                                    src=https://ssl.gstatic.com/calendar/images/dynamiclogo/2x/cal_01_v1.png />
-                            </a>
+                            <h3>הצטרפות ליומן</h3>
+                            <p>לשם קבלת תזכורות לדד ליין ומפגשי זום</p>
+                            <div id="calendar-links">
+                                <li>
+                                    <a target="_blank"
+                                        href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=M2dsZGdpa3FiNGhpdmUwNzYzZGQ1cWxlM2sgbWlrYWNvaGVuNzQ4QG0&amp;tmsrc=mikacohen748%40gmail.com">
+                                        סיום הרשמה- מפגש הקבוצה
+                                    </a>
+                                </li>
+                                <li>
+                                    <a target="_blank"
+                                        href="https://calendar.google.com/event?action=TEMPLATE&tmeid=MW9kdWtpcWMxZ3VqZXV2NXJoOGV2dHQ2bnYgbWlrYWNvaGVuNzQ4QG0&tmsrc=mikacohen748%40gmail.com">
+                                        הגשת הטקסט שלך
+                                    </a>
+                                </li>
+                                <li>
+                                    <a target="_blank"
+                                        href="https://calendar.google.com/event?action=TEMPLATE&tmeid=NjJjaDcxa2lmcW1oZWZoNTM3aWU1NDhmcGogbWlrYWNvaGVuNzQ4QG0&tmsrc=mikacohen748%40gmail.com">
+                                        הגשת המשוב לבדיקת המנהלת
+                                    </a>
+                                </li>
+                                <li>
+                                    <a target="_blank"
+                                        href="https://calendar.google.com/event?action=TEMPLATE&tmeid=N2N2YW05YmFnMHZpbGtsaDFzMmJqOXExdW4gdGV4dHVyYS5wcm9qZWN0QG0&tmsrc=textura.project%40gmail.com">
+                                        קבלת משוב ומפגש סיום
+                                    </a>
+                                </li>
+                            </div>
+                            <img id="google-calendar" alt="calendar"
+                                src=https://ssl.gstatic.com/calendar/images/dynamiclogo/2x/cal_01_v1.png />
                         </div>
                     </div>
                     <button id="go-to-main-page">
@@ -734,7 +767,7 @@
                             <tr>
                                 <td>
                                     <span>
-                                        קריאת טקסטים של אחרים
+                                        כתיבת משוב לטקסטים של אחרים
                                     </span>
                                 </td>
                                 <td>
@@ -746,12 +779,24 @@
                             <tr>
                                 <td>
                                     <span>
+                                        הגשת המשוב לבדיקת המנהלת
+                                    </span>
+                                </td>
+                                <td>
+                                    <div id="texture-deadline" data-date="2020-05-29" class="deadlines deadline-date">
+                                        29/05/2020
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>
                                         קבלת משוב ומפגש סיום
                                     </span>
                                 </td>
                                 <td>
-                                    <div id="feedback-deadline" data-date="2020-05-31" class="deadlines deadline-date">
-                                        31/05/2020
+                                    <div id="feedback-deadline" data-date="2020-06-01" class="deadlines deadline-date">
+                                        01/06/2020
                                     </div>
                                 </td>
                             </tr>
@@ -961,7 +1006,7 @@
         };
 
         const submitForm = fieldValues => {
-            database.ref('users/' + fieldValues['facebook-name']).set(fieldValues).then(() => {
+            database.ref('users/texture-007/' + fieldValues['facebook-name']).set(fieldValues).then(() => {
                 userName = fieldValues.name;
                 if (userName) {
                     localStorage.setItem('userName', userName);
@@ -1053,14 +1098,16 @@
 
 
         registerForm.onsubmit = event => {
-            event.preventDefault();
-            const formCompleteAction = fieldValues => {
-                fieldValues.fromPayment = false;
-                submitForm(fieldValues);
-                afterCompletion();
-            };
+            // event.preventDefault();
+            // const formCompleteAction = fieldValues => {
+            //     fieldValues.fromPayment = false;
+            //     submitForm(fieldValues);
+            //     afterCompletion();
+            // };
 
-            validateFormInputs(formCompleteAction, 'חסרים לך פרטים למלא!');
+            window.open('https://www.facebook.com/groups/2573808686069443');
+
+            // validateFormInputs(formCompleteAction, 'חסרים לך פרטים למלא!');
         };
 
         paybox.onclick = (event) => {
