@@ -1,0 +1,1021 @@
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Alef&family=Amatic+SC&family=Suez+One&display=swap"
+        rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+        body,
+        html {
+            scroll-behavior: smooth;
+            padding: 0;
+            margin: 0;
+            direction: rtl;
+            font-family: 'Alef', sans-serif;
+            background-color: #f4f4f4;
+            background-image: url('./assets/paper-bg.png');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        #thank-you-page {
+            display: none;
+        }
+
+        .centered {
+            text-align: center;
+        }
+
+        #thank-you-page h1 {
+            font-size: 3.5em;
+        }
+
+        #thank-you-page p {
+            font-size: 1em;
+        }
+
+        #thank-you-page img {
+            max-width: 50px;
+        }
+
+        div#main-page {
+            display: flex;
+            margin: 30px auto;
+            max-width: 1200px;
+        }
+
+        #about-wrapper {
+            max-width: 350px;
+            display: inline-block;
+            position: fixed;
+        }
+
+        #content-wrapper {
+            max-width: 630px;
+            width: 630px;
+            min-height: 630px;
+            background-color: #ededed;
+            margin: 20px 360px 100px 0;
+            box-shadow: 3px 1px 15px 6px rgba(0, 0, 0, 0.1);
+            justify-content: space-between;
+            position: absolute;
+            padding: 40px 60px;
+            z-index: 1;
+        }
+
+        img#logo {
+            max-width: 300px;
+            margin: 20px auto;
+        }
+
+        div#about {
+            text-align: justify;
+        }
+
+        div#about {
+            padding: 0 0 0 30px;
+        }
+
+        p#hashtag {
+            font-family: 'Amatic SC', cursive;
+            font-size: 1.5em;
+        }
+
+        h1,
+        p#hashtag {
+            margin: 5px auto;
+        }
+
+        p#quotation {
+            color: rgba(0, 0, 0, 0.5);
+            border-right: 1px solid #9a9a9a;
+            padding-right: 15px;
+            max-width: 320px;
+            text-align: right;
+            font-style: italic;
+        }
+
+        #textura-author-about {
+            margin-left: 42px;
+        }
+
+        #textura-author-about p {
+            max-width: 200px;
+        }
+
+        #textura-author-img {
+            width: 170px;
+            height: 170px;
+            background-size: cover;
+            background-image: url('./assets/007-author.png');
+        }
+
+        #textura-author-about p {
+            font-size: 0.85em;
+        }
+
+        img#rabbit-bg {
+            max-width: 150px;
+            position: fixed;
+            bottom: 0;
+            left: 30px;
+        }
+
+        div#textura {
+            display: flex;
+        }
+
+        #textura h3 {
+            font-size: 1.6em;
+            font-family: Alef;
+        }
+
+        ul {
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: auto;
+            width: 100%;
+        }
+
+        li {
+            padding: 0 20px 30px;
+            background-color: rgba(255, 255, 255, 0.5);
+            margin: 10px;
+            flex: 1 1 auto;
+            text-align: right;
+            font-size: 1.1em;
+        }
+
+        li:hover,
+        li.active {
+            box-shadow: 3px 1px 15px 6px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 1);
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+
+        li.active {
+            background-color: #1B263B;
+            color: white;
+        }
+
+        h3 {
+            margin: 20px auto 0;
+        }
+
+        h2 {
+            margin: 0 auto 20px;
+        }
+
+        h1#title {
+            font-size: 2.7em;
+        }
+
+        h2 {
+            font-size: 2em;
+        }
+
+        h3 {
+            font-size: 1.8em;
+            font-weight: 900;
+            font-family: 'Amatic SC', cursive, 'Suez One', serif;
+        }
+
+        h4 {
+            font-size: 1.1em;
+            margin: 5px 0 10px;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        div#register {
+            margin: 50px auto;
+            display: flex;
+            width: 80%;
+        }
+
+        div#register #inputs {
+            width: 100%;
+        }
+
+        #register h1,
+        #register h2 {
+            text-align: center;
+            margin: 0 auto 20px;
+        }
+
+        #quotation.last-quote {
+            /* position: relative; */
+            /* left: 0; */
+            /* bottom: 0; */
+            /* margin: 0 auto 0 0; */
+            max-width: 100%;
+        }
+
+        #register input[type="text"],
+        #register textarea {
+            font-family: 'Amatic SC', cursive;
+            outline: none;
+            font-size: 2em;
+            /* text-align: center; */
+            display: block;
+            width: 100%;
+            height: 60px;
+            margin: 10px auto;
+            border: none;
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
+            padding-right: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        #register input[type="text"]:disabled {
+            cursor: pointer;
+            /* background-color: #1B263B; */
+            /* color: white; */
+        }
+
+        #register h4 {
+            font-size: 1.5em;
+        }
+
+        #register input[type=submit],
+        button {
+            outline: 0;
+            -webkit-appearance: none;
+            cursor: pointer;
+            width: 100%;
+            height: 80px;
+            line-height: 70px;
+            margin: auto;
+            display: block;
+            /* margin: 42px auto; */
+            margin: 20px auto;
+            font-size: 1.7em;
+            font-family: 'Amatic SC', cursive;
+        }
+
+        #register input[type=submit]:hover,
+        button:hover {
+            background-color: #1B263B;
+            color: white;
+        }
+
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #register textarea {
+            height: 100px;
+        }
+
+        #loader {
+            background-image: url(./assets/loader.gif);
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            z-index: 3;
+            top: 0;
+            left: 0;
+            background-repeat: no-repeat;
+            background-color: #e6e6e6;
+            background-position: 50%;
+            background-size: 20%;
+            transition: all 0.3s ease;
+        }
+
+        #loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        #payments {
+            margin: auto;
+        }
+
+        #payment-bit,
+        #payment-paybox {
+            cursor: pointer;
+        }
+
+        #payment-bit {
+            width: 80px;
+        }
+
+        #payment-paybox {
+            display: flex;
+            height: 50px;
+            margin: 0 10px;
+        }
+
+        table#deadlines {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px auto;
+        }
+
+        #deadlines tr {
+            padding: 10px 20px;
+            /* background-color: white; */
+            width: 80%;
+            height: 48px;
+            margin: 10px auto;
+            font-family: 'Amatic SC', cursive;
+            font-size: 1.8em;
+        }
+
+        #deadlines tr span {
+            font-weight: 900;
+        }
+
+        #deadlines tr input {
+            /* width: 33%; */
+            background-color: rgba(0, 0, 0, 0);
+            border: none;
+            font-size: 1em;
+            padding: 0;
+            margin: 0 -60px 0 30px;
+        }
+
+        img#take-my-money {
+            max-width: 390px;
+        }
+
+        .eng {
+            direction: ltr;
+        }
+
+        hr {
+            margin: 50px 0;
+        }
+
+        .seperator {
+            margin: auto;
+            text-align: center;
+        }
+
+        #missing-fields {
+            margin: auto;
+            text-align: center;
+            transition: all 0.1s ease;
+            color: tomato;
+        }
+
+        #footer {
+            font-size: 0.5em;
+            position: fixed;
+            bottom: 0;
+            direction: ltr;
+        }
+
+        #thank-you-page h3 {
+            font-size: 2.1em;
+            margin-bottom: 10px;
+        }
+
+        #thank-you-page p,
+        #thank-you-page button {
+            max-width: 480px;
+            margin: auto;
+        }
+
+        #thank-you-page img {
+            margin: 20px auto;
+        }
+
+        #thank-you-page button {
+            margin: 42px auto;
+        }
+
+        #thank-you-page #links {
+            display: flex;
+            justify-content: center;
+        }
+
+        .link {
+            /* flex: 1 1 33%; */
+            cursor: pointer;
+            width: 27%;
+            background-color: white;
+            border: 3px solid white;
+            padding: 10px;
+            text-align: center;
+            margin: 10px auto;
+        }
+
+        .link:hover {
+            border: 3px solid #1B263B;
+        }
+
+        #register #go-to-links-page {
+            display: none;
+        }
+
+        #thank-you-message {
+            margin-bottom: 50px;
+        }
+
+        @media (max-width: 1200px) {
+            #about-wrapper {
+                display: none;
+            }
+
+            #content-wrapper {
+                position: static;
+                margin: auto;
+            }
+        }
+
+        @media (max-width: 420px) {
+
+            body,
+            html {
+                scroll-behavior: auto;
+            }
+
+            #loader {
+                background-size: 100%;
+            }
+
+            div#main-page {
+                margin: 0;
+            }
+
+            #content-wrapper {
+                padding: 6%;
+                margin: 2%;
+            }
+
+            #textura {
+                flex-direction: column-reverse;
+            }
+
+            #textura-content h3 {
+                margin: 0 auto;
+            }
+
+            p#quotation {
+                max-width: 100%;
+            }
+
+            #textura-author-about {
+                margin: 15px 0;
+            }
+
+            #textura-author-img {
+                max-width: 50%;
+                float: right;
+                margin: 0;
+                margin-left: 17px;
+            }
+
+            #textura-author-about p {
+                font-size: 1em;
+                display: contents;
+            }
+
+            p {
+                text-align: justify;
+                font-size: 1.2em;
+            }
+
+            ul li {
+                margin: 10px 0;
+            }
+
+            h4 {
+                font-size: 1.5em;
+            }
+
+            #deadlines tr {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                height: 128px;
+            }
+
+            div#register {
+                width: 100%;
+            }
+
+            #register input[type=text] {
+                height: 90px;
+            }
+
+            #register textarea {
+                height: 120px;
+            }
+
+            #missing-fields {
+                font-size: 1.2em;
+            }
+
+            #thank-you-page p {
+                font-size: 1.2em;
+            }
+
+            #thank-you-page #links {
+                flex-direction: column;
+            }
+
+            #thank-you-page .link {
+                width: 100%;
+                padding: 0;
+                border: none;
+            }
+
+            #thank-you-page .link p {
+                margin: 0 30px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loader"></div>
+    <div id="main-page">
+        <div id="about-wrapper">
+            <img id="logo" src="assets/textura-logo.png" alt="logo" />
+            <div id="about">
+                <h1>מה זה בעצם?</h1>
+                <p>
+                    <b>טקסטורה</b> הוא מיזם חברתי שמציע הזמנות כתיבה וקריאה בשם "טקסטורות". מאחוריו עומלות כותבים
+                    וכותבות נלהבות שמטרתן ליצור בית בטוח ונגיש לכתיבה, בו אפשר להתנסות ולשחק במילים ולעורר שיח ספרותי
+                    פורה.<br /> אנחנו מאמינות שמערכת חברתית ונגישה, המאחדת בין כתיבה וקריאה, בין מנהל למשתתף, בין כותב
+                    מתחיל למשוררת מצליחה, תברא מגרש משחקים לכתיבה. על ידי מודל כלכלי אפשרי, נוכל לתת לספרות מקום עקבי
+                    בחיי היומיום, שמראה אפשרויות ודרך- ולא רק תוצאה רחוקה. אנחנו רוצות ליצור מרחב עממי פורה שלא מרים אפו
+                    על כתיבת פוסטים, ולא נרתע ממסות פוליטיות על ההווה- אנו רוצות להחיות את הטקסט בדרכים שונות, מכוחה של
+                    הקהילה, באומץ ליפול ולהתעלות יחד, תוך כדי תנועה.<br /> למען השריר, בעד ההנאה.
+                </p>
+            </div>
+        </div>
+        <div id="content-wrapper">
+            <div id="thank-you-page">
+                <div class="centered">
+                    <div id="thank-you-message">
+                        <h1>תודה!</h1>
+                        <p>
+                            מנהל הקבוצה יצור איתכם קשר בקרוב לליווי אישי של הכתיבה שלכם.<br />
+                            מומלץ לשמור את הדף הזה. הוא מכיל את הדדליינים שמתעדכנים בלייב + את כל פרטי הטקסטורה שלכם
+                        </p>
+                    </div>
+                    <h2>מה עכשיו?</h2>
+                    <div id="links">
+                        <div class="link">
+                            <a target="_blank" href="https://chat.whatsapp.com/Lk70l7ldMmlFs3RC0MDjYh">
+                                <h3>הצטרפו לקבוצת הטקסטורה בווצאפ</h3>
+                                <p>שם תוכלו להתעדכן, לקשקש, לקבל רעיונות...</p>
+                                <img src="./assets/whatsapp.png" alt="whatsapp" />
+                            </a>
+                        </div>
+                        <div class="link">
+                            <a target="_blank" href="">
+                                <h3>לינק לדרייב הטקטורה</h3>
+                                <p>שם תעלו את הכתבים שלכם...</p>
+                                <img src="./assets/google_drive.png" alt="google drive" />
+                            </a>
+                        </div>
+                        <div class="link">
+                            <a target="_blank" href="">
+                                <h3>זימון לדד ליינים בלוח שנה</h3>
+                                <p>כי כולנו בני אדם דחיינים מטבענו</p>
+                                <img id="google-calendar" alt="calendar"
+                                    src=https://ssl.gstatic.com/calendar/images/dynamiclogo/2x/cal_01_v1.png />
+                            </a>
+                        </div>
+                    </div>
+                    <button id="go-to-main-page">
+                        בחזרה לדף ההנחיות
+                    </button>
+                </div>
+            </div>
+            <div id="textura-wrapper">
+                <div id="textura">
+                    <div id="textura-author-about">
+                        <div id="textura-author-img"></div>
+                        <p> קצת על גל -
+                            נולדתי במדבר, עכשיו אני בעיר, לפעמים אני כותבת, לרוב אני עובדת בחינוך, זו הפעם הראשונה שאני
+                            מעבירה סדנת כתיבה, כי מילים זה עניין, שתיקה גם כן, אז אני עושה את שתיהן, לסירוגין, בקצב לא
+                            אחיד, משלי.</p>
+                    </div>
+                    <div id="textura-content">
+                        <p id="hashtag">
+                            <a target="_blank"
+                                href="https://www.facebook.com/hashtag/%D7%9C%D7%9B%D7%AA%D7%95%D7%91_%D7%90%D7%AA_%D7%94%D7%A7%D7%95%D7%A8%D7%95%D7%A0%D7%94">
+                                #כותבים_את_הקורונה
+                            </a>
+                        </p>
+                        <h2>טקסטורה #007</h2>
+                        <h1 id="title">פירוק והרכבה</h1>
+                        <h3>ותפרק את האוטומטי, המובן מאליו
+                            ותרכיב מחדש בבחירה מלאה</h3>
+                        <p id="quotation">
+                            "מילים יכולות להוליך שולל. התנהגות תמיד חושפת את האמת"
+                            (איוואנה צ'בק, מתוך "כוחו של השחקן")
+                        </p>
+                        <!-- <h2>"ותפרק את האוטומטי, המובן מאליו
+                            ותרכיב מחדש בבחירה מלאה"</h2> -->
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        "הפשטת פעולה רחב לרצף המרכיבים שלה, מגלה אמת המסתתרת מפני ההכרה. פירוקן של פעולות יומיומיות, אלו
+                        שהפכו אוטומטיות ומובנות מאליהן, מאפשרות תובנה חדשה על עצמנו ועל הבחירות שנעשו. תשומת לב לאותן
+                        פעולות קטנות עלולה לזמן שינוי, דיוק, התפתחות ויצירה מחודשת, המאפשרת הכרה בייחוד שלך, כאן ועכשיו.
+                        (גל פאר, יוצרת הטקסטורה)
+                    </p>
+                </div>
+                <hr />
+                <div>
+                    <h2>התהליך</h2>
+                    <ul id="options">
+                        <li id="disassembly" class="option" data-value="פירוק">
+                            <h3>1. פירוק</h3><br />
+                            התבונן לרגע בפעולות המרכיבות את חייך. בחר.י פעולה (או מצב) אחת שהיא משמעותית עבורך, אך
+                            שגרתית, ופרק.י אותה לפעלים קטנים יותר - פיזיים/טכניים בצורת שם- פועל: ללמוד, ללכת, לרוץ,
+                            לבשל. השתמש.י גם באלו המבטאים תחושה/רגש: לאבד ראש, לקחת אוויר, להתמודד.
+                            שימו-לב ישנם פעלים שיכולים להתפרש בכמה דרכים בהתאם לקונטקסט למשל: הפועל לעקור יכול להיות
+                            פיזי - לעקור עץ, אך גם להתפרש כתנועה רגשית - לעקור דבר מן הלב.
+                        </li>
+                        <li id="expression" class="option" data-value="הרכבה">
+                            <h3>2. הרכבה</h3><br />
+                            קרא את עצמך. התבונן בפעלים המרכיבים את הפעולה הגדולה. מה התחושה או התמה המרכזית העולה
+                            מהטקסט? החמצה? קשר? חיבור? נתק? חרטה? דיוק? הרכיבו את הטקסט מחדש סביב התמה או התחושה המרכזית
+                            שעלתה. עשו בפעלים כרצונכם - החסירו, הוסיפו, הטעינו בהם משמעות חדשה, ואפילו - אם כך מרגיש -
+                            התעלמו מהם כליל - וכתבו טקסט חדש בעקבות התחושה או התמה שעלתה.
+                        </li>
+                    </ul>
+                    <p id="quotation" class="last-quote">
+                        "פירוק והרכבה.. זהו עניין של למוסס דברים, לשבור אותם ולראות בהם חומר בסיסי שממנו אפשר לבנות
+                        שוב, מחדש, ועוד פעם. אותם
+                        חומרי נפש, שאולי היו לרועץ, יכולים להפוך להיות חומר בלבד, רק חומר, חומר ליצירה שממנו אפשר
+                        להרכיב תוצר חדש ואחר. יש בזה
+                        סוג של החלמה.. של התחדשות" (נורית צדרבוים)
+                    </p>
+                    <hr />
+                    <h2>עכשיו- מתחילים להתאמן!</h2>
+                    <p>
+                        מנהל הקבוצה יצור איתכם קשר לליווי אישי של הכתיבה שלכם! <br />
+                        תינתן לכם ההזדמנות לכתוב ולשתף את חווית הכתיבה
+                        הזדמנות להצטרף לקהילת הכותבים של טקסטורה
+                        הזדמנות להשתתף בכתיבה משותפת- מפגש זום
+                        והפתעות נוספות.
+                    </p>
+                    <div>
+                        <h4>מה אפשר לכתוב?</h4>
+                        <p>
+                            שיר, סיפור קצר, מסה. (עד 1500 מילים)
+                        </p>
+                    </div>
+                    <div>
+                        <h4>הרשמה לסדנה איך?</h4>
+                        <p>
+                            פשוט הרשמו למטה, ונחזור אליכם עם פרטים.
+                        </p>
+                    </div>
+                    <div>
+                        <h4>מה הלו״ז?</h4>
+                        <table id="deadlines">
+                            <tr>
+                                <td>
+                                    <span>
+                                        סיום הרשמה- מפגש הקבוצה
+                                    </span>
+                                </td>
+                                <td>
+                                    <input id="register-deadline" class="deadlines" type="date" value="2020-05-10"
+                                        disabled />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>
+                                        הגשת הטקסט שלך
+                                    </span>
+                                </td>
+                                <td>
+                                    <input id="writing-deadline" class="deadlines" type="date" value="2020-05-20"
+                                        disabled />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>
+                                        קריאת טקסטים של אחרים
+                                    </span>
+                                </td>
+                                <td>
+                                    <input id="texture-deadline" class="deadlines" type="date" value="2020-05-22"
+                                        disabled />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>
+                                        קבלת משוב ומפגש סיום
+                                    </span>
+                                </td>
+                                <td>
+                                    <input id="texture-deadline" class="deadlines" type="date" value="2020-05-31"
+                                        disabled />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <h4>צריכות עזרה?</h4>
+                        <p>
+                            # דמיינ.י סיטואציה שאת.ה נוהג.ת לחזור אליה כמו: הגעה לעבודה, יציאה למועדון, ארוחה אצל ההורים
+                            וכו'.<br />
+                            # נסי לפרק את הסיטואציה שכוללת רגשות, שיחות, ותחושות רק דרך פעלים. למשל: במקום להגיד "תחושת
+                            בדידות" אמרי: להסתכל לכל הצדדים, לבהות בחלל, ללכת לשירותים, לחזור, לחפש משהו, לשאול אם ראו
+                            את…
+                            וכו'.<br />
+                            # הרכבה: הוסף רגשות, מילות קישור, מחשבות.<br />
+                            # גבש את הטקסט לכדי יצירה שלמה.<br />
+                        </p>
+                    </div>
+                </div>
+                <hr id="register-hr" />
+                <div id="register">
+                    <button id="go-to-links-page">לדף הלינקים</button>
+                    <div id="inputs">
+                        <h2 class="eng">SHUT UP AND TAKE MY MONEY!</h2>
+                        <!-- <h2>קניתם אותי ב- ״תכתוב״</h2> -->
+                        <!-- <h2>אני בפנים!</h2> -->
+                        <form method="POST" id="register-form">
+                            <!-- <a href="#options">
+                                <input type="text" data-required="true" name="writing-option" class="register-input"
+                                    id="writing-option" placeholder="אפשרות לכתיבה (לבחור למעלה)" disabled />
+                            </a> -->
+                            <input type="text" class="register-input" data-required="true" name="name" id="name"
+                                placeholder="שם" />
+                            <input type="text" class="register-input" data-required="true" name="facebook-name"
+                                id="facebook-name" placeholder="שם בפייסבוק" />
+                            <input type="text" class="register-input" data-required="true" name="email" id="email"
+                                placeholder="אימייל" />
+                            <input type="text" class="register-input" data-required="true" name="phone" id="phone"
+                                placeholder="טלפון" />
+                            <textarea class="register-input" name="notes" id="notes"
+                                placeholder="הערות/בקשות/שאלות"></textarea>
+                            <button id="submit-with-paybox">
+                                תשלום באמצעות
+                                <img id="payment-paybox" src="assets/paybox.png" alt="שלם באמצעות פייבוקס" />
+                            </button>
+                            <!-- <table id="payments">
+                            <tr>
+                                <td>
+                                    <img id="payment-bit" src="assets/bit.webp" alt="שלם באמצעות ביט" />
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <img id="payment-paybox" src="assets/paybox.png" alt="שלם באמצעות פייבוקס" />
+                                </td>
+                            </tr>
+                        </table> -->
+                            <input type="submit" value="לא בא לי לשלם- נהיה בקשר (-:" />
+                        </form>
+                    </div>
+                </div>
+                <div class="seperator">---</div>
+                <p id="quotation" class="last-quote">
+                    "הדיבור והפעולה חושפים את המובחנות הייחודית הזאת. באמצעותם, בני אדם מבחינים את עצמם במקום להיות רק
+                    מובחנים; הם האופנויות שבהן יצורים אנושיים מופיעים זה בפני זה, לא כאובייקטים פיזיים אלא בתור בני
+                    אדם" (חנה ארנדט
+                    מתוך המצב האנושי)
+                </p>
+            </div>
+        </div>
+    </div>
+    <img id="rabbit-bg" src="./assets/rabbit.png" alt="rabbit-bg" />
+    <div id="footer">made with 💛</div>
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-database.js"></script>
+
+    <script>
+        // TODO: Replace the following with your app's Firebase project configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBwI2QA-doA_XSt7ftzklO8mcq0QEhUMfQ",
+            authDomain: "textura-9b922.firebaseapp.com",
+            databaseURL: "https://textura-9b922.firebaseio.com",
+            projectId: "textura-9b922",
+            storageBucket: "textura-9b922.appspot.com",
+            messagingSenderId: "881410690546",
+            appId: "1:881410690546:web:b942347d1183d51b92ef6b",
+            measurementId: "G-10KQ3ESTBF"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        var database = firebase.database();
+
+        // firebase.database().ref('/users').once('value').then(function (snapshot) {
+        //     var username = snapshot.val() || 'Anonymous';
+        //     console.log(username);
+        // });
+    </script>
+
+    <script>
+        const LOADING_ANIMATION_TIMEOUT = 1500;
+
+        const writingOptions = Array.from(document.getElementsByClassName('option'));
+        const input = document.getElementById('writing-option');
+        const deadlines = Array.from(document.getElementsByClassName('deadlines'));
+        const registerForm = document.getElementById('register-form');
+        const paybox = document.getElementById('submit-with-paybox');
+        const goToMainPageButton = document.getElementById('go-to-main-page');
+        const goToLinksPageButton = document.getElementById('go-to-links-page');
+        const loader = document.getElementById('loader');
+        const thankYouPage = document.getElementById('thank-you-page');
+        const texturaPage = document.getElementById('textura-wrapper');
+
+        const resetOptions = () => {
+            writingOptions.forEach(writingOption => {
+                // reset the options class name - active style is different
+                writingOption.className = 'option';
+            });
+        };
+
+        writingOptions.forEach(writingOption => {
+            writingOption.onclick = () => {
+                if (location.hash === '#options') {
+                    location.hash = '#register';
+                }
+
+                // resetOptions();
+
+                input.value = 'אפשרות לכתיבה: ' + writingOption.dataset.value;
+                writingOption.className = writingOption.className === 'option active' ?
+                    'option' :
+                    'option active';
+            };
+        });
+
+        deadlines.forEach(deadline => { // this is the date input element
+            const deadlineTimestamp = new Date(deadline.value).getTime();
+            const now = new Date().getTime();
+
+            const td = document.createElement('td');
+            if (now >= deadlineTimestamp) {
+                td.innerText = 'עבר הזמן!';
+                td.style.color = 'tomato';
+            } else {
+                const daysLeft = Math.round((deadlineTimestamp - now) / 1000 / 60 / 60 / 24);
+                td.innerText = `עוד ${daysLeft} ימים!`;
+                td.style.color = 'olive';
+            }
+
+            deadline.parentNode.parentNode.appendChild(td);
+        });
+
+        const validateFormInputs = (formCompleteAction, incompleteMessage) => {
+            const fields = Array.from(document.getElementsByClassName('register-input'));
+            let formComplete = true;
+            const fieldValues = {};
+
+            fields.forEach(field => {
+                const required = !!field.dataset.required;
+                if (required && !field.value) {
+                    formComplete = false;
+                } else {
+                    fieldValues[field.name] = field.value;
+                }
+            });
+
+            const missingFieldsDiv = document.getElementById('missing-fields');
+            if (formComplete) {
+                if (missingFieldsDiv) {
+                    registerForm.removeChild(missingFieldsDiv);
+                }
+
+                fieldValues.registrationDate = new Date().getTime();
+                formCompleteAction(fieldValues);
+            } else {
+                if (missingFieldsDiv) {
+                    missingFieldsDiv.style.opacity = 0;
+                    setTimeout(() => {
+                        missingFieldsDiv.innerText = incompleteMessage;
+                        missingFieldsDiv.style.opacity = 1;
+                    }, 100);
+                } else {
+                    const div = document.createElement('div');
+                    div.id = 'missing-fields';
+                    div.innerText = incompleteMessage;
+                    registerForm.appendChild(div);
+                }
+            }
+        };
+
+        const afterCompletion = () => {
+            document.cookie = 'formSubmitted';
+            localStorage.setItem('formSubmitted', true);
+            showThankYouPage();
+        };
+
+        const submitForm = fieldValues => {
+            database.ref('users/' + fieldValues['facebook-name']).set(fieldValues).then(() => {
+                console.log('success', fieldValues);
+            }).catch(error => {
+                console.error('error', error);
+            });
+        };
+
+        const scrollToTop = () => {
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+            }, 500); // it takes 1 second for the loader to finish transition
+        };
+
+        const showThankYouPage = () => {
+            location.hash = 'thank-you';
+            loader.className = 'visible';
+            scrollToTop();
+
+            setTimeout(() => {
+                loader.className = 'hidden';
+                texturaPage.style.display = 'none';
+                thankYouPage.style.display = 'initial';
+            }, LOADING_ANIMATION_TIMEOUT);
+        };
+
+        const showMainPage = () => {
+            loader.className = 'visible';
+            location.hash = 'main';
+            scrollToTop();
+
+            setTimeout(() => {
+                loader.className = 'hidden';
+                texturaPage.style.display = 'initial';
+                thankYouPage.style.display = 'none';
+            }, LOADING_ANIMATION_TIMEOUT);
+        }
+
+
+        window.onload = () => {
+            const loader = document.getElementById('loader');
+            loader.className = 'hidden';
+
+            const googleCalendar = document.getElementById('google-calendar');
+            const day = new Date().getDate();
+            const dayOfMonth = day < 10 ? `0${day}` : day;
+            googleCalendar.src = `https://ssl.gstatic.com/calendar/images/dynamiclogo/2x/cal_${dayOfMonth}_v1.png`;
+            if (document.cookie.includes('formSubmitted;') || localStorage.getItem('formSubmitted')) {
+                const registerSection = document.getElementById('register');
+                const registerHr = document.getElementById('register-hr');
+                const inputs = document.getElementById('inputs');
+                goToLinksPageButton.display = 'inline';
+                registerSection.removeChild(inputs);
+                registerSection.parentElement.removeChild(registerHr);
+                showThankYouPage();
+            }
+        };
+
+
+        registerForm.onsubmit = event => {
+            event.preventDefault();
+            const formCompleteAction = fieldValues => {
+                fieldValues.fromPayment = false;
+                submitForm(fieldValues);
+                afterCompletion();
+            };
+
+            validateFormInputs(formCompleteAction, 'חסרים לך פרטים למלא!');
+        };
+
+        paybox.onclick = (event) => {
+            event.preventDefault();
+            const formCompleteAction = fieldValues => {
+                fieldValues.fromPayment = true;
+                submitForm(fieldValues);
+                window.open('http://pbme.co/pbj?v=j&g=5ea71d9100913f0009954265');
+                afterCompletion();
+            };
+
+            validateFormInputs(formCompleteAction, 'חסרים לך פרטים למלא!');
+        };
+
+        goToMainPageButton.onclick = showMainPage;
+        goToLinksPageButton.onclick = showThankYouPage;
+    </script>
+</body>
+
+</html>
