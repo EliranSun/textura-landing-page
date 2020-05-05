@@ -714,8 +714,9 @@
                                     </span>
                                 </td>
                                 <td>
-                                    <input id="register-deadline" class="deadlines" type="date" value="2020-05-17"
-                                        disabled />
+                                    <div id="register-deadline" data-date="2020-05-17" class="deadlines deadline-date">
+                                        17/05/2020
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -725,8 +726,9 @@
                                     </span>
                                 </td>
                                 <td>
-                                    <input id="writing-deadline" class="deadlines" type="date" value="2020-05-20"
-                                        disabled />
+                                    <div id="writing-deadline" data-date="2020-05-20" class="deadlines deadline-date">
+                                        20/05/2020
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -736,8 +738,9 @@
                                     </span>
                                 </td>
                                 <td>
-                                    <input id="texture-deadline" class="deadlines" type="date" value="2020-05-22"
-                                        disabled />
+                                    <div id="texture-deadline" data-date="2020-05-22" class="deadlines deadline-date">
+                                        22/05/2020
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -747,8 +750,9 @@
                                     </span>
                                 </td>
                                 <td>
-                                    <input id="texture-deadline" class="deadlines" type="date" value="2020-05-31"
-                                        disabled />
+                                    <div id="feedback-deadline" data-date="2020-05-31" class="deadlines deadline-date">
+                                        31/05/2020
+                                    </div>
                                 </td>
                             </tr>
                         </table>
@@ -895,22 +899,22 @@
             };
         });
 
-        deadlines.forEach(deadline => { // this is the date input element
-            const deadlineTimestamp = new Date(deadline.value).getTime();
-            const now = new Date().getTime();
+        // deadlines.forEach(deadline => { // this is the date input element
+        //     const deadlineTimestamp = new Date(deadline.value).getTime();
+        //     const now = new Date().getTime();
 
-            const td = document.createElement('td');
-            if (now >= deadlineTimestamp) {
-                td.innerText = 'עבר הזמן!';
-                td.style.color = 'tomato';
-            } else {
-                const daysLeft = Math.round((deadlineTimestamp - now) / 1000 / 60 / 60 / 24);
-                td.innerText = `עוד ${daysLeft} ימים!`;
-                td.style.color = 'olive';
-            }
+        //     const td = document.createElement('td');
+        //     if (now >= deadlineTimestamp) {
+        //         td.innerText = 'עבר הזמן!';
+        //         td.style.color = 'tomato';
+        //     } else {
+        //         const daysLeft = Math.round((deadlineTimestamp - now) / 1000 / 60 / 60 / 24);
+        //         td.innerText = `עוד ${daysLeft} ימים!`;
+        //         td.style.color = 'olive';
+        //     }
 
-            deadline.parentNode.parentNode.appendChild(td);
-        });
+        //     deadline.parentNode.parentNode.appendChild(td);
+        // });
 
         const validateFormInputs = (formCompleteAction, incompleteMessage) => {
             const fields = Array.from(document.getElementsByClassName('register-input'));
@@ -1006,6 +1010,26 @@
         }
 
 
+        const calcAndDisplayDeadlines = () => {
+            const deadlinesDates = Array.from(document.getElementsByClassName('deadline-date'));
+            deadlinesDates.forEach(deadlineDate => {
+                const timestamp = new Date(deadlineDate.dataset.date).getTime();
+                const now = new Date().getTime();
+
+                const td = document.createElement('td');
+                if (now >= timestamp) {
+                    td.innerText = 'עבר הזמן!';
+                    td.style.color = 'tomato';
+                } else {
+                    const daysLeft = Math.round((timestamp - now) / 1000 / 60 / 60 / 24);
+                    td.innerText = `עוד ${daysLeft} ימים!`;
+                    td.style.color = 'olive';
+                }
+
+                deadlineDate.parentNode.parentNode.appendChild(td);
+            })
+        }
+
         window.onload = () => {
             const loader = document.getElementById('loader');
             loader.className = 'hidden';
@@ -1023,6 +1047,8 @@
                 registerSection.parentElement.removeChild(registerHr);
                 showThankYouPage();
             }
+
+            calcAndDisplayDeadlines();
         };
 
 
