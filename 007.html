@@ -414,6 +414,16 @@
             border: 3px solid #1B263B;
         }
 
+        .link img {
+            position: relative;
+            bottom: 0;
+        }
+
+        #thank-you-page #artificial-gap-hack {
+            width: 100%;
+            height: 44px;
+        }
+
         #register #go-to-links-page {
             display: none;
         }
@@ -535,6 +545,11 @@
                 margin: 0 30px;
                 text-align: center;
             }
+
+            #thank-you-page #artificial-gap-hack {
+                width: 100%;
+                height: 0;
+            }
         }
     </style>
 </head>
@@ -561,32 +576,35 @@
             <div id="thank-you-page">
                 <div class="centered">
                     <div id="thank-you-message">
-                        <h1>תודה!</h1>
+                        <h1 id="thank-you-personal-message">אהלן!</h1>
                         <p>
-                            מנהל הקבוצה יצור איתכם קשר בקרוב לליווי אישי של הכתיבה שלכם.<br />
-                            מומלץ לשמור את הדף הזה. הוא מכיל את הדדליינים שמתעדכנים בלייב + את כל פרטי הטקסטורה שלכם
+                            תודה! וברוכה הבאה לקהילת טקסטורה.
+                            מנהלת הטקסטורה שלך תטלפן בהקדם :)
+                            נותרו עוד כמה פעולות קצרות:
                         </p>
                     </div>
-                    <h2>מה עכשיו?</h2>
                     <div id="links">
                         <div class="link">
-                            <a target="_blank" href="https://chat.whatsapp.com/Lk70l7ldMmlFs3RC0MDjYh">
-                                <h3>הצטרפו לקבוצת הטקסטורה בווצאפ</h3>
-                                <p>שם תוכלו להתעדכן, לקשקש, לקבל רעיונות...</p>
+                            <a target="_blank" href="https://chat.whatsapp.com/JxDIcIn4E6M6Ruck1YLYKB">
+                                <h3>קהילה</h3>
+                                <p>הצטרפות לקבוצת וואטס-אפ קטנה, לעדכונים ושיח עם הכותבים בטקסטורה שלך</p>
                                 <img src="./assets/whatsapp.png" alt="whatsapp" />
                             </a>
                         </div>
                         <div class="link">
-                            <a target="_blank" href="">
-                                <h3>לינק לדרייב הטקטורה</h3>
-                                <p>שם תעלו את הכתבים שלכם...</p>
+                            <a target="_blank"
+                                href="https://drive.google.com/drive/folders/1nEZW7fC_QDsWHg_VXNbFS4Uebt0xSBu3?usp=sharing">
+                                <h3>מקום</h3>
+                                <p>התחברות לדרייב עבור העלאת הטקסטים, וגישה לתיקייה מלאה בהשראות ועזרים לכתיבה</p>
                                 <img src="./assets/google_drive.png" alt="google drive" />
                             </a>
                         </div>
                         <div class="link">
-                            <a target="_blank" href="">
-                                <h3>זימון לדד ליינים בלוח שנה</h3>
-                                <p>כי כולנו בני אדם דחיינים מטבענו</p>
+                            <a target="_blank"
+                                href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=M2dsZGdpa3FiNGhpdmUwNzYzZGQ1cWxlM2sgbWlrYWNvaGVuNzQ4QG0&amp;tmsrc=mikacohen748%40gmail.com">
+                                <h3>הצטרפות ליומן</h3>
+                                <p>לשם קבלת תזכורות לדד ליין ומפגשי זום</p>
+                                <div id="artificial-gap-hack"></div>
                                 <img id="google-calendar" alt="calendar"
                                     src=https://ssl.gstatic.com/calendar/images/dynamiclogo/2x/cal_01_v1.png />
                             </a>
@@ -602,9 +620,9 @@
                     <div id="textura-author-about">
                         <div id="textura-author-img"></div>
                         <p> קצת על גל -
-                            נולדתי במדבר, עכשיו אני בעיר, לפעמים אני כותבת, לרוב אני עובדת בחינוך, זו הפעם הראשונה שאני
-                            מעבירה סדנת כתיבה, כי מילים זה עניין, שתיקה גם כן, אז אני עושה את שתיהן, לסירוגין, בקצב לא
-                            אחיד, משלי.</p>
+                            נולדתי במדבר, עכשיו אני בעיר. לפעמים אני כותבת, לרוב אני עוסקת בחינוך, מרגיש לי שמילים זה
+                            עניין,
+                            ושתיקה גם כן. אז אני עושה את שניהם, לסירוגין, בקצב לא אחיד, משלי.</p>
                     </div>
                     <div id="textura-content">
                         <p id="hashtag">
@@ -639,11 +657,12 @@
                     <ul id="options">
                         <li id="disassembly" class="option" data-value="פירוק">
                             <h3>1. פירוק</h3><br />
-                            התבונן לרגע בפעולות המרכיבות את חייך. בחר.י פעולה (או מצב) אחת שהיא משמעותית עבורך, אך
-                            שגרתית, ופרק.י אותה לפעלים קטנים יותר - פיזיים/טכניים בצורת שם- פועל: ללמוד, ללכת, לרוץ,
-                            לבשל. השתמש.י גם באלו המבטאים תחושה/רגש: לאבד ראש, לקחת אוויר, להתמודד.
-                            שימו-לב ישנם פעלים שיכולים להתפרש בכמה דרכים בהתאם לקונטקסט למשל: הפועל לעקור יכול להיות
-                            פיזי - לעקור עץ, אך גם להתפרש כתנועה רגשית - לעקור דבר מן הלב.
+                            בחר מצב מוכר ופרק אותו לשמות פעלים (ללכת, להיכנס, לסע, להגיע, להתלבט, לקנות), פרט ככל
+                            האפשר גם את התחושות והרגשות
+                            שמלוות את המצב.
+                            הרכבה: התבונן בחלקים שיצרת והרכב את הטקסט מחדש. החסירו, הוסיפו, הטעינו בהם משמעות חדשה,
+                            ואפילו - אם כך מרגיש - התעלמו
+                            מהם כליל - וכתבו טקסט חדש בעקבות החוויה.
                         </li>
                         <li id="expression" class="option" data-value="הרכבה">
                             <h3>2. הרכבה</h3><br />
@@ -691,7 +710,7 @@
                                     </span>
                                 </td>
                                 <td>
-                                    <input id="register-deadline" class="deadlines" type="date" value="2020-05-10"
+                                    <input id="register-deadline" class="deadlines" type="date" value="2020-05-17"
                                         disabled />
                                 </td>
                             </tr>
@@ -733,14 +752,14 @@
                     <div>
                         <h4>צריכות עזרה?</h4>
                         <p>
-                            # דמיינ.י סיטואציה שאת.ה נוהג.ת לחזור אליה כמו: הגעה לעבודה, יציאה למועדון, ארוחה אצל ההורים
-                            וכו'.<br />
-                            # נסי לפרק את הסיטואציה שכוללת רגשות, שיחות, ותחושות רק דרך פעלים. למשל: במקום להגיד "תחושת
-                            בדידות" אמרי: להסתכל לכל הצדדים, לבהות בחלל, ללכת לשירותים, לחזור, לחפש משהו, לשאול אם ראו
-                            את…
-                            וכו'.<br />
-                            # הרכבה: הוסף רגשות, מילות קישור, מחשבות.<br />
-                            # גבש את הטקסט לכדי יצירה שלמה.<br />
+                            # דמיין סיטואציה שאתה נוהג לחזור אליה כמו: הגעה לעבודה, יציאה למועדון, ארוחה אצל ההורים
+                            וכו'<br />
+                            # נסה לפרק את הסיטואציה שכוללת רגשות, שיחות, ותחושות דרך פעלים. למשל: במקום להגיד "תחושת
+                            בדידות": דמיין כיצד זה נראה מהצד: להסתכל לצדדים, לבהות בחלל, ללכת לשירותים, לחזור, לחפש
+                            משהו, לשאול אם ראו את… וכו'.<br />
+                            # הרכבה: התבונן בפעולות ובדוק האם היית חוזר עליהם באותה הדרך?<br />
+                            # גבש את הטקסט לכדי יצירה שלמה. בחר נושא שעולה מהמצב הזה -הוסף רגשות, מילות קישור ושחק עם
+                            המרכיבים שלך.
                         </p>
                     </div>
                 </div>
@@ -837,6 +856,7 @@
     <script>
         const LOADING_ANIMATION_TIMEOUT = 1500;
 
+        let userName = '';
         const writingOptions = Array.from(document.getElementsByClassName('option'));
         const input = document.getElementById('writing-option');
         const deadlines = Array.from(document.getElementsByClassName('deadlines'));
@@ -847,6 +867,7 @@
         const loader = document.getElementById('loader');
         const thankYouPage = document.getElementById('thank-you-page');
         const texturaPage = document.getElementById('textura-wrapper');
+        const personalMessage = document.getElementById('thank-you-personal-message');
 
         const resetOptions = () => {
             writingOptions.forEach(writingOption => {
@@ -933,6 +954,12 @@
 
         const submitForm = fieldValues => {
             database.ref('users/' + fieldValues['facebook-name']).set(fieldValues).then(() => {
+                userName = fieldValues.name;
+                if (userName) {
+                    localStorage.setItem('userName', userName);
+                    document.cookie = `userName=${userName}`;
+                    personalMessage.innerText = `אהלן ${userName}!`;
+                }
                 console.log('success', fieldValues);
             }).catch(error => {
                 console.error('error', error);
@@ -948,6 +975,10 @@
         const showThankYouPage = () => {
             location.hash = 'thank-you';
             loader.className = 'visible';
+            if (localStorage.getItem('userName')) {
+                personalMessage.innerText = `אהלן ${localStorage.getItem('userName')}!`;
+            }
+
             scrollToTop();
 
             setTimeout(() => {
@@ -960,6 +991,7 @@
         const showMainPage = () => {
             loader.className = 'visible';
             location.hash = 'main';
+            // goToLinksPageButton.style.display = 'inline';
             scrollToTop();
 
             setTimeout(() => {
@@ -982,7 +1014,7 @@
                 const registerSection = document.getElementById('register');
                 const registerHr = document.getElementById('register-hr');
                 const inputs = document.getElementById('inputs');
-                goToLinksPageButton.display = 'inline';
+                goToLinksPageButton.style.display = 'inline';
                 registerSection.removeChild(inputs);
                 registerSection.parentElement.removeChild(registerHr);
                 showThankYouPage();
@@ -1006,7 +1038,7 @@
             const formCompleteAction = fieldValues => {
                 fieldValues.fromPayment = true;
                 submitForm(fieldValues);
-                window.open('http://pbme.co/pbj?v=j&g=5ea71d9100913f0009954265');
+                window.open('http://pbme.co/pbj?v=j&g=5eb1539d169824000e4766f8');
                 afterCompletion();
             };
 
