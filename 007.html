@@ -447,17 +447,29 @@
         }
 
         @media (max-width: 1200px) {
+            div#main-page {
+                flex-direction: column;
+            }
+
             #about-wrapper {
-                display: none;
+                display: inline;
+                position: static;
+                max-width: none;
+                max-width: 630px;
+                margin: 30px auto 60px;
             }
 
             #content-wrapper {
                 position: static;
                 margin: auto;
             }
+
+            img#rabbit-bg {
+                display: none;
+            }
         }
 
-        @media (max-width: 420px) {
+        @media (max-width: 750px) {
 
             body,
             html {
@@ -472,9 +484,22 @@
                 margin: 0;
             }
 
+            #about-wrapper {
+                margin: auto;
+                max-width: none;
+                padding: 6%;
+            }
+
+            #about-wrapper img#logo {}
+
+            #about-wrapper #about {
+                padding: 0;
+            }
+
             #content-wrapper {
                 padding: 6%;
                 margin: 2%;
+                max-width: 84%;
             }
 
             #textura {
